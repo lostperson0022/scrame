@@ -97,6 +97,7 @@ public class RegisterStudent {
 				choice = sc.nextInt();
 				//check choice validity
 				if (choice > tutorials.size() || choice < 1) throw new Exception("No such tutorial!");
+				else if (tutorials.get(choice - 1).getVacancy() == 0) throw new Exception("Tutorial slot is full!");
 				sc.nextLine();
 			}
 			while (tutorials.get(choice - 1).getVacancy() == 0);
@@ -126,6 +127,7 @@ public class RegisterStudent {
 				choice = sc.nextInt();
 				//check choice validity
 				if (choice > laboratories.size() || choice < 1) throw new Exception("No such laboratory!");
+				else if (laboratories.get(choice - 1).getVacancy() == 0) throw new Exception("laboratory slot is full!");
 				sc.nextLine();
 			}
 			while (laboratories.get(choice - 1).getVacancy() == 0);
